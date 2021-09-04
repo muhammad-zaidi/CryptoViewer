@@ -6,9 +6,6 @@ import CryptoCard from './CryptoCard/CryptoCard';
 function Main() {
   const [crypto, setCrypto] = useState([]);
   const [search, setSearch] = useState('');
-  const yo = () => {
-    console.log('Yo');
-  };
 
   useEffect(() => {
     axios

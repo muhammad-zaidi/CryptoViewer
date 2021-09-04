@@ -23,21 +23,18 @@ const CryptoCard = ({
       <p className='cryptoPrice'>${price.toLocaleString()}</p>
       <p className='cryptoMC'>Market Cap: ${marketcap.toLocaleString()}</p>
       <p className='cryptoVolume'>Volume (24H): ${volume.toLocaleString()}</p>
+      <Link to={`/crypto/${id}`}>
+        <button className='button'>View Price History</button>
+      </Link>
       {priceChange < 0 ? (
         <div className='priceContainerDOWN'>
           <i className='fas fa-angle-down fa-2x'></i>
           <p className='priceChange'>{priceChange.toFixed(2)}%</p>
-          <Link to={`/crypto/${id}`}>
-            <button>View Details</button>
-          </Link>
         </div>
       ) : (
         <div className='priceContainerUP'>
           <i className='fas fa-angle-up fa-2x'></i>
           <p className='priceChange'>{priceChange.toFixed(2)}%</p>
-          <Link to={`/crypto/${id}`}>
-            <button>View Details</button>
-          </Link>
         </div>
       )}
     </div>

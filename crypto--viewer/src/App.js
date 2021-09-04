@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Main from './components/Main';
+import CryptoData from './components/CryptoData';
 import Chart from './components/Chart';
 
 const App = () => {
@@ -8,7 +9,7 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Route exact path='/' component={Main} />
-        <Route exact path='/crypto/:id' component={Chart} />
+        <Route exact path='/crypto/:id' component={CryptoData} />
       </BrowserRouter>
     </div>
   );
