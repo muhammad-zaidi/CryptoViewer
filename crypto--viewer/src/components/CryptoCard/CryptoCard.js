@@ -1,7 +1,9 @@
 import React from 'react';
 import './CryptoCard.css';
+import { Link } from 'react-router-dom';
 
 const CryptoCard = ({
+  key,
   name,
   price,
   symbol,
@@ -9,6 +11,7 @@ const CryptoCard = ({
   volume,
   image,
   priceChange,
+  id,
 }) => {
   return (
     <div className='CryptoCard'>
@@ -24,11 +27,17 @@ const CryptoCard = ({
         <div className='priceContainerDOWN'>
           <i className='fas fa-angle-down fa-2x'></i>
           <p className='priceChange'>{priceChange.toFixed(2)}%</p>
+          <Link to={`/crypto/${id}`}>
+            <button>View Details</button>
+          </Link>
         </div>
       ) : (
         <div className='priceContainerUP'>
           <i className='fas fa-angle-up fa-2x'></i>
           <p className='priceChange'>{priceChange.toFixed(2)}%</p>
+          <Link to={`/crypto/${id}`}>
+            <button>View Details</button>
+          </Link>
         </div>
       )}
     </div>
